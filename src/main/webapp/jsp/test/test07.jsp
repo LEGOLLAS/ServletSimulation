@@ -31,19 +31,6 @@
 		String search = request.getParameter("search");
 		String exceptionPoint = request.getParameter("exception");
 		
-		List<Map<String, Object>> filteredList = new ArrayList<>(); // 검색 결과를 담을 리스트 생성
-        
-		out.println(search);
-        for(Map<String, Object> restaurant : list) {
-            String menu = (String) restaurant.get("menu");
-            
-            if(menu.equals(search)) {
-                if (exceptionPoint == null || (Double) restaurant.get("point") > 4.0) {
-                    filteredList.add(restaurant); // 검색 결과에 추가
-                }
-            }
-        }
-
 	%>
 	<div class="container">
 		<h1 class="text-center">검색결과</h1>
@@ -59,7 +46,11 @@
 				<% for(Map<String, Object> store:list){ 
 						
 					//메뉴명이 일치하는지
-					
+					if(store.equals(search)) {
+		                /* if (exceptionPoint == null || (Double) store.get("point") > 4.0) {
+		                    filteredList.add(restaurant); // 검색 결과에 추가
+		                } */
+		            
 					
 					//별점이 4.0 이상인지
 					//다운캐스팅
@@ -71,7 +62,8 @@
 					<td><%= store.get("name") %></td>
 					<td><%= store.get("point") %></td>
 				</tr>
-				<%} %>
+				<%}
+					} %>
 			</tbody>
 		</table>
 	</div>
