@@ -7,7 +7,7 @@
 <title>ex03 입력</title>
 </head>
 <body>
-	<form method="post" action="/jsp/ex/ex03.jsp">
+	<form method="post" action="/jsp/ex/ex03.jsp" >
 		<label>닉네임: </label> <input type="text" name="nickname">
 
 		<label>강아지 <input type="radio" name="animal"></label>
