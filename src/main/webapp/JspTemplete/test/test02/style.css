@@ -19,6 +19,9 @@ header> .search{
 	height: 50px;
 }
 
+.main-content{
+	height: 500px;
+}
 
 footer{
 	height: 100px;
