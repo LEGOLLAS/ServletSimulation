@@ -15,6 +15,7 @@ public class ServletTest01 extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/plain");
 		
+		
 		Date now = new Date();
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy년 M월 d일");
 		String formatDate = formatter.format(now);
